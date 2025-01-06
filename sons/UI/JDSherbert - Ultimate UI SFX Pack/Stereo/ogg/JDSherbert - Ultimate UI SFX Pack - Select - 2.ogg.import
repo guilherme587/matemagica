@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JDSherbert - Ultimate UI SFX Pack - Select - 2.ogg-faaad3d971ff5860288f20c39e60e291.oggstr"
+
+[deps]
+
+source_file="res://sons/UI/JDSherbert - Ultimate UI SFX Pack/Stereo/ogg/JDSherbert - Ultimate UI SFX Pack - Select - 2.ogg"
+dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - Select - 2.ogg-faaad3d971ff5860288f20c39e60e291.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

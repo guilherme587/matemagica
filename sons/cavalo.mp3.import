@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cavalo.mp3-7cd4fc538b34810b45add61409fc98f8.mp3str"
+
+[deps]
+
+source_file="res://sons/cavalo.mp3"
+dest_files=[ "res://.import/cavalo.mp3-7cd4fc538b34810b45add61409fc98f8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

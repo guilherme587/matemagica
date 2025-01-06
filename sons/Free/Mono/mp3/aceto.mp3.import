@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/aceto.mp3-fb2d27581c158c6690d94af4d6d30e4e.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Mono/mp3/aceto.mp3"
+dest_files=[ "res://.import/aceto.mp3-fb2d27581c158c6690d94af4d6d30e4e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

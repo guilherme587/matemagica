@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/JDSherbert - Ultimate UI SFX Pack - Popup Close - 1.wav-ce74b8b5993ae1ec58a8d2a7ca6d0b17.sample"
+
+[deps]
+
+source_file="res://sons/UI/JDSherbert - Ultimate UI SFX Pack/Mono/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Popup Close - 1.wav"
+dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - Popup Close - 1.wav-ce74b8b5993ae1ec58a8d2a7ca6d0b17.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Square).ogg-d307f140babe28d878791577deea6756.oggstr"
+
+[deps]
+
+source_file="res://sons/Free/Mono/ogg/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Square).ogg"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Square).ogg-d307f140babe28d878791577deea6756.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

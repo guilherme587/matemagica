@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).ogg-5b3c0daa7b9b140698ae19993ced8202.oggstr"
+
+[deps]
+
+source_file="res://sons/Free/Stereo/ogg/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).ogg"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Square).ogg-5b3c0daa7b9b140698ae19993ced8202.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

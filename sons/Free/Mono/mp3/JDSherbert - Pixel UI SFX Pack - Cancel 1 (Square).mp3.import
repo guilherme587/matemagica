@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Cancel 1 (Square).mp3-7d70e720c8e17a8cbcfba25277a4eb90.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Mono/mp3/JDSherbert - Pixel UI SFX Pack - Cancel 1 (Square).mp3"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Cancel 1 (Square).mp3-7d70e720c8e17a8cbcfba25277a4eb90.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Beast_Bellow11.wav-f9e3a27a1a78a514ff1d0d1527e4eb63.sample"
+
+[deps]
+
+source_file="res://sons/Beasts/Beasts/Beast_Bellow11.wav"
+dest_files=[ "res://.import/Beast_Bellow11.wav-f9e3a27a1a78a514ff1d0d1527e4eb63.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/erro.mp3-28712d44bc7c45aa078456c5edc2d506.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Mono/mp3/erro.mp3"
+dest_files=[ "res://.import/erro.mp3-28712d44bc7c45aa078456c5edc2d506.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

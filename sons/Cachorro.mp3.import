@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cachorro.mp3-98006c8d1d2cbd7f18cb852b074ea77a.mp3str"
+
+[deps]
+
+source_file="res://sons/Cachorro.mp3"
+dest_files=[ "res://.import/Cachorro.mp3-98006c8d1d2cbd7f18cb852b074ea77a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

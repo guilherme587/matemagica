@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sprites/tropas_orc_gato_abelha/4/S_Walk.png" type="Texture" id=1]
+[ext_resource path="res://fonts/Anton/Anton-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://sprites/UI/UI/AttributesIcons_17x17.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 48, 36 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 48, 36 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 48, 36 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 144, 0, 48, 36 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 48, 36 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 240, 0, 48, 36 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=8]
+size = 200
+font_data = ExtResource( 2 )
+
+[node name="sprtAbelha" type="AnimatedSprite"]
+position = Vector2( 0, 14 )
+frames = SubResource( 7 )
+frame = 2
+offset = Vector2( 0, -14 )
+
+[node name="AttributesIcons17X17" type="Sprite" parent="."]
+position = Vector2( 5.96046e-08, 16 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 3 )
+offset = Vector2( 0.571432, 1.14286 )
+
+[node name="Label1" type="Label" parent="AttributesIcons17X17"]
+margin_left = -27.1429
+margin_top = -20.0
+margin_right = 71.8571
+margin_bottom = 282.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 8 )
+text = "5"
+align = 1
+
+[node name="Label2" type="Label" parent="AttributesIcons17X17"]
+margin_left = -10.1428
+margin_top = -20.0
+margin_right = 88.8572
+margin_bottom = 282.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 8 )
+text = "8"
+align = 1
+
+[node name="Label3" type="Label" parent="AttributesIcons17X17"]
+margin_left = 20.0
+margin_top = -20.0
+margin_right = 264.0
+margin_bottom = 282.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 8 )
+text = "0.7"
+align = 1
+
+[node name="Label4" type="Label" parent="AttributesIcons17X17"]
+margin_left = 6.85718
+margin_top = -20.0
+margin_right = 105.857
+margin_bottom = 282.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1

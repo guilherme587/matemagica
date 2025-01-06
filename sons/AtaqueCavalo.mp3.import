@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/AtaqueCavalo.mp3-35dbaff0c6eb16864d46632897322f01.mp3str"
+
+[deps]
+
+source_file="res://sons/AtaqueCavalo.mp3"
+dest_files=[ "res://.import/AtaqueCavalo.mp3-35dbaff0c6eb16864d46632897322f01.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

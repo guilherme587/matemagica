@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Select 1 (Sine).ogg-9023ec030c37f2e876d86cec154385be.oggstr"
+
+[deps]
+
+source_file="res://sons/Free/Stereo/ogg/JDSherbert - Pixel UI SFX Pack - Select 1 (Sine).ogg"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Select 1 (Sine).ogg-9023ec030c37f2e876d86cec154385be.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

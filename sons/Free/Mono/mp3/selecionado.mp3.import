@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/selecionado.mp3-c5223cced9e00ff8c7ce2754efcd6e42.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Mono/mp3/selecionado.mp3"
+dest_files=[ "res://.import/selecionado.mp3-c5223cced9e00ff8c7ce2754efcd6e42.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

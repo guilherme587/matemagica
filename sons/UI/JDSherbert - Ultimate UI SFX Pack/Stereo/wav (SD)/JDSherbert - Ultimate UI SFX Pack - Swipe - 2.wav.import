@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/JDSherbert - Ultimate UI SFX Pack - Swipe - 2.wav-8a0d74f8b5f5bb2101cefde74cd20344.sample"
+
+[deps]
+
+source_file="res://sons/UI/JDSherbert - Ultimate UI SFX Pack/Stereo/wav (SD)/JDSherbert - Ultimate UI SFX Pack - Swipe - 2.wav"
+dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - Swipe - 2.wav-8a0d74f8b5f5bb2101cefde74cd20344.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ratazana.wav-5b7d248d9ce9a2bb16e0b76c2f16289f.sample"
+
+[deps]
+
+source_file="res://sons/Dinosaurs/Dinosaurs/Ratazana.wav"
+dest_files=[ "res://.import/Ratazana.wav-5b7d248d9ce9a2bb16e0b76c2f16289f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

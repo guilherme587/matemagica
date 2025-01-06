@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Cancel 2 (Sine).ogg-708f0a7c805fde371d04c3c163856cdd.oggstr"
+
+[deps]
+
+source_file="res://sons/Free/Stereo/ogg/JDSherbert - Pixel UI SFX Pack - Cancel 2 (Sine).ogg"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Cancel 2 (Sine).ogg-708f0a7c805fde371d04c3c163856cdd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

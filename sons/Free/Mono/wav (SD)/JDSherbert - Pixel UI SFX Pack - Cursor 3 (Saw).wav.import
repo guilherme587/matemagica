@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Saw).wav-e1e70330389a2bf9fbd3d9066e4ed408.sample"
+
+[deps]
+
+source_file="res://sons/Free/Mono/wav (SD)/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Saw).wav"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Cursor 3 (Saw).wav-e1e70330389a2bf9fbd3d9066e4ed408.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
