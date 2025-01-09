@@ -8,7 +8,13 @@ var blnErrou: bool = false
 var UIDeck: CanvasLayer = null
 var arrayTorresInimigas: Array
 var intTorresInimigasDerrubadas: int = 0
+var intTorresAliadasDerrubadas: int = 0
 var arrayTorresAliadas: Array
+var intAcertos: int = 0
+var intErros: int = 0
+var intTempoInicial: int = 0
+var intTempo: int = 0
+var intInimigosMortos: int = 0
 
 
 func _ready():
@@ -16,9 +22,22 @@ func _ready():
 	RNG.randomize()
 
 
-func _physics_process(delta):
-	if intTorresInimigasDerrubadas >= 3:
-		get_tree().paused = true
+func reiniciar():
+	RNG = RandomNumberGenerator.new()
+	nodeAlgoritimoMatematico = null
+	nodeGameCena = null
+	intGameDificuldade = 1
+	blnErrou = false
+	UIDeck = null
+	arrayTorresInimigas = []
+	intTorresInimigasDerrubadas = 0
+	intTorresAliadasDerrubadas = 0
+	arrayTorresAliadas = []
+	intAcertos = 0
+	intErros = 0
+	intTempoInicial = 0
+	intTempo = 0
+	intInimigosMortos = 0
 
 
 func distancia_para(vec1: Vector2, vec2: Vector2) -> int:

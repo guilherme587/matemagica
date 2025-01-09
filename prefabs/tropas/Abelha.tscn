@@ -102,6 +102,7 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource( 4 )
 areaDano = NodePath("AreaDanoUnitarioTropa")
+intScore = 5
 
 [node name="sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 15 )

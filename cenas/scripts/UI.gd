@@ -22,6 +22,7 @@ onready var onrdArrayPosicaoCartas: Array = [
 	$Cartas/Position2D
 ]
 onready var lblQuestao: Label = $Questoes/ItemBox24X24/Questao
+onready var lblPlacar: Label = $UI/lblPlacar/lblPlacar
 
 var pckdCarta: PackedScene = preload("res://prefabs/tropas/Carta.tscn")
 var nodeProximaCarta: Node2D = null
@@ -33,6 +34,9 @@ func _ready():
 	MostrarPontos(vlrPontosDeEnergia)
 	gerarCartas()
 
+
+func _physics_process(delta):
+	lblPlacar.text = str(Global.intTorresInimigasDerrubadas) + " - " + str(Global.intTorresAliadasDerrubadas)
 
 func gerarCartas(posicao: Vector2 = Vector2.ZERO) -> void:
 	if posicao == Vector2.ZERO:
@@ -69,3 +73,19 @@ func MostrarPontos(quantidade: int) -> void:
 			ponto.visible = false
 		
 		quantidade -= 1
+
+
+func _on_btnPausa_gui_input(event):
+	if Input.is_action_just_released("mouse_esquerdo"):
+		get_tree().paused = !get_tree().paused
+		get_tree().root.get_node("TelaInicial").visivel(get_tree().paused)
+
+
+func _on_btnReiniciar_gui_input(event):
+	if Input.is_action_just_released("mouse_esquerdo"):
+		Global.nodeGameCena.queue_free()
+		var current_scene_path = get_tree().current_scene.filename
+		
+		get_tree().change_scene(current_scene_path)
+		
+		Global.reiniciar()

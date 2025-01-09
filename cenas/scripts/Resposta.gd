@@ -44,11 +44,13 @@ func ChecarResposta():
 		Global.UIDeck.MostrarPontos(Global.UIDeck.vlrPontosDeEnergia)
 		Global.nodeAlgoritimoMatematico.lblTempo.text = str(1)
 		Global.nodeAlgoritimoMatematico._Timer.start(1)
+		Global.intAcertos += 1
 	else:
 		$Erro.play()
 		Global.blnErrou = true
 		Global.nodeAlgoritimoMatematico.lblTempo.text = str(Global.nodeAlgoritimoMatematico.intTempoPenalidade * Global.nodeAlgoritimoMatematico.intNivel)
 		Global.nodeAlgoritimoMatematico._Timer.start(Global.nodeAlgoritimoMatematico.intTempoPenalidade * Global.nodeAlgoritimoMatematico.intNivel)
+		Global.intErros += 1
 
 
 func _on_ColorRect_mouse_entered():

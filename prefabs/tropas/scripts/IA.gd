@@ -4,6 +4,8 @@ export var intVelocidade: int = 2000
 export var intDano: int = 1
 export var areaDano: NodePath
 export var intDistanciaMinAlvo: int = 5
+export var blnInimigo: bool = false
+export var intScore: int = 3
 
 onready var onrdSprite: AnimatedSprite = $sprite
 onready var onrdVisao: Area2D = $Visao
@@ -13,7 +15,6 @@ var knbAlvo = null
 var stbAlvo: StaticBody2D = null
 var Alvo = null
 var blnAtacando: bool = false
-export var blnInimigo: bool = false
 
 
 func _ready():
@@ -21,18 +22,12 @@ func _ready():
 	if not blnInimigo:
 		self.collision_layer = 2
 		onrdVisao.collision_mask = 4
-#		get_node(areaDano).collision_mask = 4
-#		get_node(areaDano).collision_mask = 8192
-#		get_node(areaDano).collision_mask = (1 << 3) | (1 << 13)
 		get_node(areaDano).collision_mask = 8196
 		get_torreAtaque()
 	else:
 		self.modulate = Color8(255, 155, 155)
 		self.collision_layer = 4
 		onrdVisao.collision_mask = 2
-#		get_node(areaDano).collision_mask = 2
-#		get_node(areaDano).collision_mask = 1
-#		get_node(areaDano).collision_mask = (1 << 0) | (1 << 1)
 		get_node(areaDano).collision_mask = 3
 		get_torreAtaque()
 
@@ -60,7 +55,7 @@ func _physics_process(delta):
 func get_torreAtaque():
 	var distancia: float = 0
 	var index: int = 0
-	if not blnInimigo:
+	if not blnInimigo and Global.arrayTorresInimigas.size() > 0:
 		for torre in Global.arrayTorresInimigas:
 			if is_instance_valid(torre):
 				if distancia == 0:
@@ -70,7 +65,7 @@ func get_torreAtaque():
 					index = Global.arrayTorresInimigas.find(torre)
 		
 		stbAlvo = Global.arrayTorresInimigas[index]
-	else:
+	elif Global.arrayTorresAliadas.size() > 0:
 		for torre in Global.arrayTorresAliadas:
 			if is_instance_valid(torre):
 				if distancia == 0:

@@ -23,12 +23,17 @@ func hitted(dano: float) -> void:
 			var aux = pckdTorreDestruida.instance()
 			Global.nodeGameCena.add_child(aux)
 			aux.global_position = self.get_parent().global_position
+			
 			if self.get_parent().blnInimigo:
-				Global.arrayTorresInimigas.erase(self.get_parent())
 				Global.intTorresInimigasDerrubadas += 1
+				Global.arrayTorresInimigas.erase(self.get_parent())
 			else:
+				Global.intTorresAliadasDerrubadas += 1
 				Global.arrayTorresAliadas.erase(self.get_parent())
 		else:
+			if self.get_parent().blnInimigo:
+				Global.intInimigosMortos += self.get_parent().intScore
+			
 			for i in range(1):
 				$MorteTropa.play()
 				yield($MorteTropa, "finished")

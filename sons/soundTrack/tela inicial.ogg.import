@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tela inicial.ogg-50351ca23aa642c4759822fc14739454.oggstr"
+
+[deps]
+
+source_file="res://sons/soundTrack/tela inicial.ogg"
+dest_files=[ "res://.import/tela inicial.ogg-50351ca23aa642c4759822fc14739454.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

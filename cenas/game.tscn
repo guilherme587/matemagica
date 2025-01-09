@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://prefabs/scripts/GeradorFuncaoPrimeiroGrau.gd" type="Script" id=1]
 [ext_resource path="res://prefabs/torres/Torre_nivel_6.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sprites/tile_set/2 Objects/8 Camp/1.png" type="Texture" id=7]
 [ext_resource path="res://sons/soundTrack/finalgame.ogg" type="AudioStream" id=8]
 [ext_resource path="res://sprites/tile_set/2 Objects/8 Camp/3.png" type="Texture" id=9]
+[ext_resource path="res://sons/soundTrack/game.ogg" type="AudioStream" id=10]
 [ext_resource path="res://sprites/tile_set/2 Objects/7 Decor/Lamp1.png" type="Texture" id=11]
 [ext_resource path="res://sprites/tile_set/3 Animated Objects/2 Campfire/1.png" type="Texture" id=12]
 [ext_resource path="res://sprites/tile_set/3 Animated Objects/1 Flag/2.png" type="Texture" id=13]
@@ -38,8 +39,14 @@
 [ext_resource path="res://sprites/UI/UI/ItemBox_24x24.png" type="Texture" id=37]
 [ext_resource path="res://sprites/pointers/All.png" type="Texture" id=38]
 [ext_resource path="res://fonts/Anton/Anton-Regular.ttf" type="DynamicFontData" id=39]
+[ext_resource path="res://sprites/UI/UI/CharacterBox_56x57.png" type="Texture" id=40]
+[ext_resource path="res://cenas/scripts/lblTempo.gd" type="Script" id=41]
 [ext_resource path="res://cenas/scripts/UI.gd" type="Script" id=42]
 [ext_resource path="res://cenas/Resposta.tscn" type="PackedScene" id=43]
+[ext_resource path="res://sprites/UI/UI/PatternMiddleBottomBG_199x48.png" type="Texture" id=44]
+[ext_resource path="res://sprites/UI/UI/BottomPatternPanel_119x17.png" type="Texture" id=45]
+[ext_resource path="res://sprites/UI/UI/BottomPatternBG_128x112.png" type="Texture" id=46]
+[ext_resource path="res://cenas/scripts/EfeitoPulsar.gd" type="Script" id=47]
 
 [sub_resource type="ShaderMaterial" id=19]
 shader = ExtResource( 33 )
@@ -240,14 +247,30 @@ font_data = ExtResource( 39 )
 size = 220
 font_data = ExtResource( 39 )
 
-[node name="teste" type="Node2D"]
+[sub_resource type="DynamicFont" id=32]
+size = 300
+font_data = ExtResource( 39 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 300
+outline_size = 16
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 39 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 300
+font_data = ExtResource( 39 )
+
+[node name="game" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+pause_mode = 1
 process_mode = 0
 one_shot = true
 
 [node name="Cronometro" type="Timer" parent="."]
+pause_mode = 1
 process_mode = 0
 one_shot = true
 
@@ -466,20 +489,23 @@ scale = Vector2( -1, 1 )
 
 [node name="TorreNivel_5" parent="TorresAiadas" instance=ExtResource( 4 )]
 position = Vector2( -180, 230 )
+blnCenario = false
 
 [node name="ArqueiroNivel_1" parent="TorresAiadas/TorreNivel_5" instance=ExtResource( 5 )]
 position = Vector2( 1, -2 )
 
-[node name="torra_nivel_7" parent="TorresAiadas" instance=ExtResource( 2 )]
+[node name="TorreMeio" parent="TorresAiadas" instance=ExtResource( 2 )]
 position = Vector2( -75, 300 )
+blnCenario = false
 
-[node name="ArqueiroNivel_3" parent="TorresAiadas/torra_nivel_7" instance=ExtResource( 3 )]
+[node name="ArqueiroNivel_3" parent="TorresAiadas/TorreMeio" instance=ExtResource( 3 )]
 position = Vector2( 2, -4 )
 
-[node name="TorreNivel_4" parent="TorresAiadas" instance=ExtResource( 4 )]
+[node name="TorreNivel_6" parent="TorresAiadas" instance=ExtResource( 4 )]
 position = Vector2( -115, 400 )
+blnCenario = false
 
-[node name="ArqueiroNivel_1" parent="TorresAiadas/TorreNivel_4" instance=ExtResource( 5 )]
+[node name="ArqueiroNivel_1" parent="TorresAiadas/TorreNivel_6" instance=ExtResource( 5 )]
 position = Vector2( 1, -2 )
 
 [node name="TorresInimigas" type="Node2D" parent="."]
@@ -488,22 +514,25 @@ position = Vector2( 960, -63 )
 [node name="TorreNivel_5" parent="TorresInimigas" instance=ExtResource( 4 )]
 position = Vector2( -180, 230 )
 blnInimigo = true
+blnCenario = false
 
 [node name="ArqueiroNivel_1" parent="TorresInimigas/TorreNivel_5" instance=ExtResource( 5 )]
 position = Vector2( 1, -2 )
 blnInimigo = true
 
-[node name="torra_nivel_7" parent="TorresInimigas" groups=["Inimigo"] instance=ExtResource( 2 )]
+[node name="TorreMeio" parent="TorresInimigas" groups=["Inimigo"] instance=ExtResource( 2 )]
 position = Vector2( -75, 300 )
 blnInimigo = true
+blnCenario = false
 
-[node name="ArqueiroNivel_3" parent="TorresInimigas/torra_nivel_7" instance=ExtResource( 3 )]
+[node name="ArqueiroNivel_3" parent="TorresInimigas/TorreMeio" instance=ExtResource( 3 )]
 position = Vector2( 0, -4 )
 blnInimigo = true
 
 [node name="TorreNivel_4" parent="TorresInimigas" instance=ExtResource( 4 )]
 position = Vector2( -115, 400 )
 blnInimigo = true
+blnCenario = false
 
 [node name="ArqueiroNivel_1" parent="TorresInimigas/TorreNivel_4" instance=ExtResource( 5 )]
 position = Vector2( 1, -2 )
@@ -787,6 +816,7 @@ position = Vector2( 481, 182 )
 shape = SubResource( 26 )
 
 [node name="Area2DCampoDeBatalhaFeiticos2" type="Area2D" parent="."]
+visible = false
 position = Vector2( 813, 440 )
 rotation = 1.57079
 collision_layer = 64
@@ -813,6 +843,7 @@ __meta__ = {
 shape = SubResource( 28 )
 
 [node name="UI" type="CanvasLayer" parent="."]
+pause_mode = 2
 script = ExtResource( 42 )
 
 [node name="Cartas" type="Control" parent="UI"]
@@ -1029,9 +1060,325 @@ position = Vector2( 684, 495 )
 [node name="Resposta5" parent="UI/Questoes" instance=ExtResource( 43 )]
 position = Vector2( 684, 526 )
 
+[node name="UI" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="btnPausa" type="Sprite" parent="UI/UI"]
+position = Vector2( 913, 30 )
+scale = Vector2( 1.35714, 0.780702 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="UI/UI/btnPausa"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.37, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "||"
+
+[node name="btnPausa" type="ColorRect" parent="UI/UI/btnPausa"]
+margin_left = -28.0
+margin_top = -29.0
+margin_right = 28.0
+margin_bottom = 28.0
+color = Color( 1, 1, 1, 0.215686 )
+
+[node name="lblTempo" type="Sprite" parent="UI/UI"]
+position = Vector2( 482, 30 )
+scale = Vector2( 2.2, 0.8 )
+texture = ExtResource( 40 )
+script = ExtResource( 41 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblTempo" type="Label" parent="UI/UI/lblTempo"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.071, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "05:00"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="UI/UI/lblTempo"]
+pause_mode = 1
+process_mode = 0
+
+[node name="lblPlacar" type="Sprite" parent="UI/UI"]
+position = Vector2( 764, 30 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblPlacar" type="Label" parent="UI/UI/lblPlacar"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.088, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "0 - 0"
+align = 1
+valign = 1
+
+[node name="FimDeJogo" type="Control" parent="UI"]
+pause_mode = 2
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/FimDeJogo"]
+margin_right = 960.0
+margin_bottom = 540.0
+color = Color( 0.235294, 0.286275, 0.372549, 0.490196 )
+
+[node name="back" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 486, 340 )
+scale = Vector2( 11.25, 4 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BottomPatternPanel119X17" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 816, 320 )
+rotation = 1.57079
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 45 )
+
+[node name="BottomPatternPanel119X18" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 157.5, 320 )
+rotation = 1.57079
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 45 )
+flip_v = true
+
+[node name="BottomPatternBg128X112" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 489, 314 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 46 )
+flip_v = true
+
+[node name="PatternMiddleBottomBg199X48" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 486, 490.5 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 44 )
+flip_v = true
+
+[node name="Derrota" type="Label" parent="UI/FimDeJogo"]
+visible = false
+modulate = Color( 1, 0.435294, 0.435294, 1 )
+margin_left = -46.0
+margin_top = -5.0
+margin_right = 1706.0
+margin_bottom = 447.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = SubResource( 33 )
+text = "DERROTA"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Vitoria" type="Label" parent="UI/FimDeJogo"]
+modulate = Color( 0.729412, 1, 0.403922, 1 )
+margin_left = -46.0
+margin_right = 1706.0
+margin_bottom = 452.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = SubResource( 33 )
+text = "VITÓRIA"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblFimDeJogo" type="Label" parent="UI/FimDeJogo"]
+margin_left = 296.0
+margin_top = -5.0
+margin_right = 2048.0
+margin_bottom = 447.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 33 )
+text = "FIM DE JOGO"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblQuestoes" type="Label" parent="UI/FimDeJogo"]
+margin_left = 441.0
+margin_top = 236.0
+margin_right = 2193.0
+margin_bottom = 688.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 33 )
+text = "questões"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblPlacar" type="Label" parent="UI/FimDeJogo"]
+margin_left = 441.0
+margin_top = 296.0
+margin_right = 2193.0
+margin_bottom = 748.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 33 )
+text = "placar"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblScore2" type="Label" parent="UI/FimDeJogo"]
+margin_left = 584.0
+margin_top = 350.0
+margin_right = 2336.0
+margin_bottom = 802.0
+rect_scale = Vector2( 0.045, 0.045 )
+custom_fonts/font = SubResource( 33 )
+text = "score"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblPlacarQuestoes" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 485, 276.25 )
+scale = Vector2( 1.5, 0.75 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblPlacarQuestoes" type="Label" parent="UI/FimDeJogo/lblPlacarQuestoes"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.088, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "0 - 0"
+align = 1
+valign = 1
+
+[node name="lblPlacarJogo" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 489, 364.25 )
+scale = Vector2( 3.5, 1.75 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblPlacarJogo" type="Label" parent="UI/FimDeJogo/lblPlacarJogo"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.088, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "0 - 0"
+align = 1
+valign = 1
+
+[node name="lblScore" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 624, 377.25 )
+scale = Vector2( 0.7, 0.35 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblScore" type="Label" parent="UI/FimDeJogo/lblScore"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.08, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "0000"
+align = 1
+valign = 1
+
+[node name="lblFraseEfeito" type="Node2D" parent="UI/FimDeJogo/lblScore"]
+scale = Vector2( 1, 1 )
+script = ExtResource( 47 )
+
+[node name="lblFraseEfeito" type="Label" parent="UI/FimDeJogo/lblScore/lblFraseEfeito"]
+margin_left = -7.31866
+margin_top = 22.375
+margin_right = 651.681
+margin_bottom = 474.375
+rect_rotation = -30.0
+rect_scale = Vector2( 0.08, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "legal!"
+align = 1
+valign = 1
+
+[node name="Node2D" type="Node2D" parent="UI/FimDeJogo"]
+position = Vector2( 655, 425 )
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_group_": true
+}
+amplitude = 0.1
+frequency = 0.5
+
+[node name="btnReiniciar" type="Sprite" parent="UI/FimDeJogo/Node2D"]
+scale = Vector2( 1.8, 0.5 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="UI/FimDeJogo/Node2D/btnReiniciar"]
+modulate = Color( 0.509804, 1, 0.356863, 1 )
+margin_left = -23.5791
+margin_top = -22.7364
+margin_right = 641.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.03, 0.1 )
+custom_fonts/font = SubResource( 34 )
+text = "Nova Partida"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="btnReiniciar" type="ColorRect" parent="UI/FimDeJogo/Node2D/btnReiniciar"]
+margin_left = -28.0
+margin_top = -29.0
+margin_right = 28.0
+margin_bottom = 28.0
+color = Color( 1, 1, 1, 0.215686 )
+
+[node name="Game" type="AudioStreamPlayer" parent="UI/FimDeJogo"]
+pause_mode = 2
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="FinalGame" type="AudioStreamPlayer" parent="UI/FimDeJogo"]
+pause_mode = 2
+stream = ExtResource( 8 )
+
+[node name="Game" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
+stream = ExtResource( 10 )
+autoplay = true
+
 [node name="FinalGame" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
 stream = ExtResource( 8 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Cronometro" to="." method="_on_Cronometro_timeout"]
 [connection signal="timeout" from="IAInimiga/Timer" to="IAInimiga" method="_on_Timer_timeout"]
+[connection signal="gui_input" from="UI/UI/btnPausa/btnPausa" to="UI" method="_on_btnPausa_gui_input"]
+[connection signal="timeout" from="UI/UI/lblTempo/Timer" to="UI/UI/lblTempo" method="_on_Timer_timeout"]
+[connection signal="gui_input" from="UI/FimDeJogo/Node2D/btnReiniciar/btnReiniciar" to="UI" method="_on_btnReiniciar_gui_input"]

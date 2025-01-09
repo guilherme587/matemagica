@@ -69,7 +69,7 @@ func _physics_process(delta):
 			if not blnGerar:
 				self.modulate.a8 = 125
 			self.global_position = get_global_mouse_position() + Vector2(-48, -48)
-		elif Global.UIDeck.vlrPontosDeEnergia >= arrayCusto[intNumero] and blnGerar and \
+		elif Global.UIDeck != null and Global.UIDeck.vlrPontosDeEnergia >= arrayCusto[intNumero] and blnGerar and \
 		blnEmFoco and Input.is_action_just_released("mouse_esquerdo"):
 			var auxTropa = arrayTropas[intNumero].instance()
 			Global.UIDeck.vlrPontosDeEnergia -= arrayCusto[intNumero]

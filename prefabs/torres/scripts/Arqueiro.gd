@@ -20,14 +20,15 @@ func _ready():
 
 
 func _physics_process(delta):
-	if fltTempoPassado >= fltTempoEsfriar:
-		fltTempoPassado = 0
-		blnPodeAtacar = true
-	if blnPodeAtacar and knbAlvo != null and is_instance_valid(knbAlvo):
-		blnPodeAtacar = false
-		ataque()
-	
-	fltTempoPassado += delta
+	if not self.get_parent().blnCenario:
+		if fltTempoPassado >= fltTempoEsfriar:
+			fltTempoPassado = 0
+			blnPodeAtacar = true
+		if blnPodeAtacar and knbAlvo != null and is_instance_valid(knbAlvo):
+			blnPodeAtacar = false
+			ataque()
+		
+		fltTempoPassado += delta
 
 
 

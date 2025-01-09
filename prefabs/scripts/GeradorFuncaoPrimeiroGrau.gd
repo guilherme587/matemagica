@@ -19,9 +19,11 @@ onready var Cronometro: Timer = $Cronometro
 
 
 func _ready():
-	Global.intGameDificuldade = intNivel
+#	Engine.time_scale = 10
+	intNivel = Global.intGameDificuldade
 	Global.nodeAlgoritimoMatematico = self
 	Global.nodeGameCena = self
+	
 	# Testar a geração de operações matemáticas em diferentes níveis de dificuldade
 #	for nivel in range(1, 4):
 #		print("Nível de dificuldade %d:" % nivel)
@@ -30,7 +32,71 @@ func _ready():
 #			print("Operação: %s" % resultado.operacao)
 #			print("Respostas: %s" % str(resultado.respostas))
 #		print("")
+
 	_Timer.start(0)
+	
+
+func _physics_process(delta):
+	if ((Global.intTorresAliadasDerrubadas >= 2 or Global.intTorresInimigasDerrubadas >= 2) or \
+	 (Global.intTempo == (Global.intTempoInicial/2) )) and not $FinalGame.is_playing():
+		$Game.stop()
+		$FinalGame.play()
+	if Global.intTorresAliadasDerrubadas >= 3 or Global.intTorresInimigasDerrubadas >= 3:
+		game_over()
+	elif Global.intTempo <= 0:
+		game_over()
+
+
+func game_over():
+	self.get_tree().paused = true
+	$UI/FimDeJogo.visible = true
+	$UI/FimDeJogo/lblPlacarQuestoes/lblPlacarQuestoes.text = str(Global.intAcertos) + " - " + str(Global.intErros)
+	$UI/FimDeJogo/lblPlacarJogo/lblPlacarJogo.text = str(Global.intTorresInimigasDerrubadas) + " - " + str(Global.intTorresAliadasDerrubadas)
+	
+	var score: int = ((Global.intTorresInimigasDerrubadas +1) * (Global.intAcertos +1) * (Global.intTempo +1) * (Global.intInimigosMortos +1)) -1
+	var intMultiplicador: int = 10
+	if (score *intMultiplicador) < 5000:
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.text = "legal!"
+	elif (score *intMultiplicador) >= 5000 and (score *intMultiplicador) < 10000:
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.text = "Incrível!"
+	elif (score *intMultiplicador) >= 10000 and (score *intMultiplicador) < 50000:
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.text = "Herói Ascendente!"
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.modulate = Color.aquamarine
+	elif (score *intMultiplicador) >= 50000 and (score *intMultiplicador) < 100000:
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.text = "Super Ultra!"
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.modulate = Color.blueviolet
+	elif (score *intMultiplicador) >= 100000 and (score *intMultiplicador) < 500000:
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.text = "Lenda Imortal!"
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.modulate = Color.gold
+		$UI/FimDeJogo/lblScore/lblFraseEfeito.original_scale *= 1.5
+		$UI/FimDeJogo/lblScore/lblFraseEfeito.amplitude = 0.3
+	elif (score *intMultiplicador) >= 500000 and (score *intMultiplicador) < 99999999999:
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.text = "Banquete dos Deuses!"
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.modulate = Color.red
+		$UI/FimDeJogo/lblScore/lblFraseEfeito.original_scale *= 2
+		$UI/FimDeJogo/lblScore/lblFraseEfeito.amplitude = 0.4
+	elif (score *intMultiplicador) >= 99999999999:
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.text = "B*quete dos Deuses!"
+		$UI/FimDeJogo/lblScore/lblFraseEfeito/lblFraseEfeito.modulate = Color.pink
+		$UI/FimDeJogo/lblScore/lblFraseEfeito.original_scale *= 2.7
+		$UI/FimDeJogo/lblScore/lblFraseEfeito.amplitude = 0.5
+	
+	$UI/FimDeJogo/lblScore/lblScore.text = "%04d" % (score *intMultiplicador)
+	if Global.intAcertos >= Global.intErros:
+		$UI/FimDeJogo/lblPlacarQuestoes/lblPlacarQuestoes.modulate = Color.red
+	else:
+		$UI/FimDeJogo/lblPlacarQuestoes/lblPlacarQuestoes.modulate = Color.greenyellow
+	if Global.intTorresInimigasDerrubadas <= Global.intTorresAliadasDerrubadas:
+		$UI/FimDeJogo/Derrota.visible = true
+		$UI/FimDeJogo/Vitoria.visible = false
+		$UI/FimDeJogo/lblPlacarJogo/lblPlacarJogo.modulate = Color.red
+		$UI/FimDeJogo/FinalGame.play()
+		$UI/FimDeJogo/FinalGame.set_volume_db(-15)
+	else:
+		$UI/FimDeJogo/lblPlacarJogo/lblPlacarJogo.modulate = Color.greenyellow
+		$UI/FimDeJogo/Game.play()
+		$UI/FimDeJogo/Game.set_volume_db(-5)
+
 
 func gerar_operacao(nivel_dificuldade: int) -> Dictionary:
 	# Define o intervalo para os números baseados no nível de dificuldade

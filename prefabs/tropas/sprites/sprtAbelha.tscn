@@ -47,6 +47,7 @@ frame = 2
 offset = Vector2( 0, -14 )
 
 [node name="AttributesIcons17X17" type="Sprite" parent="."]
+visible = false
 position = Vector2( 5.96046e-08, 16 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 3 )

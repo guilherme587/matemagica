@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Equation Wars"
-run/main_scene="res://cenas/teste.tscn"
+run/main_scene="res://cenas/TelaInicial.tscn"
 config/icon="res://icon.png"
 
 [autoload]

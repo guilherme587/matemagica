@@ -82,6 +82,7 @@ intVelocidade = 3500
 intDano = 3
 areaDano = NodePath("AreaDanoUnitarioTropa")
 intDistanciaMinAlvo = 100
+intScore = 20
 
 [node name="BolaDeFogo" parent="." instance=ExtResource( 7 )]
 visible = false

@@ -79,6 +79,7 @@ collision_layer = 2
 collision_mask = 8195
 script = ExtResource( 3 )
 areaDano = NodePath("AreaDanoUnitarioTropa")
+intScore = 5
 
 [node name="sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 15 )
@@ -109,5 +110,6 @@ stream = ExtResource( 8 )
 
 [node name="Ataque" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+volume_db = -15.0
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]

@@ -125,6 +125,7 @@ script = ExtResource( 3 )
 intVelocidade = 2800
 intDano = 5
 areaDano = NodePath("AreaDanoUnitarioTropa")
+intScore = 20
 
 [node name="sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 10, -36 )

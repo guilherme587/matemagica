@@ -39,7 +39,7 @@ var arrayTropas: Array = [
 ]
 
 func _ready():
-	timerTimer.start(fltIntervaloGerar * 1)
+	timerTimer.start(fltIntervaloGerar * (Global.intGameDificuldade +2))
 
 
 func _on_Timer_timeout():

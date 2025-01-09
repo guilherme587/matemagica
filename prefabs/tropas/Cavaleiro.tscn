@@ -80,6 +80,7 @@ script = ExtResource( 3 )
 intVelocidade = 4500
 intDano = 3
 areaDano = NodePath("AreaDanoUnitarioTropa")
+intScore = 8
 
 [node name="sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 15 )
