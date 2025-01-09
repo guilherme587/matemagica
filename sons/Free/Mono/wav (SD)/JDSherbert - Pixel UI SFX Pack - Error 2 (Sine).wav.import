@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Sine).wav-f6983e0f43c8f4cff31e0518360d3d3c.sample"
+
+[deps]
+
+source_file="res://sons/Free/Mono/wav (SD)/JDSherbert - Pixel UI SFX Pack - Error 2 (Sine).wav"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Sine).wav-f6983e0f43c8f4cff31e0518360d3d3c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

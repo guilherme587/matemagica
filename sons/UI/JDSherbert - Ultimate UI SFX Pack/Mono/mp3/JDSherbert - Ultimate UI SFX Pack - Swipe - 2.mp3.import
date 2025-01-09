@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Ultimate UI SFX Pack - Swipe - 2.mp3-5c8d66d1ba6534715d706ff2f76ca0c5.mp3str"
+
+[deps]
+
+source_file="res://sons/UI/JDSherbert - Ultimate UI SFX Pack/Mono/mp3/JDSherbert - Ultimate UI SFX Pack - Swipe - 2.mp3"
+dest_files=[ "res://.import/JDSherbert - Ultimate UI SFX Pack - Swipe - 2.mp3-5c8d66d1ba6534715d706ff2f76ca0c5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

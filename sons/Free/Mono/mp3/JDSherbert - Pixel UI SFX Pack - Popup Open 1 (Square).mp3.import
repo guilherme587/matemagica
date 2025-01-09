@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Popup Open 1 (Square).mp3-fb2049a7fb673e0703a86315c8c89bb0.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Mono/mp3/JDSherbert - Pixel UI SFX Pack - Popup Open 1 (Square).mp3"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Popup Open 1 (Square).mp3-fb2049a7fb673e0703a86315c8c89bb0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

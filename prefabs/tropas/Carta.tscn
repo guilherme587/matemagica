@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://sprites/pointers/All.png" type="Texture" id=1]
+[ext_resource path="res://sprites/UI/UI/TopPatternPanel_02_33x15.png" type="Texture" id=2]
+[ext_resource path="res://sprites/UI/UI/TopPatternBG_116x67.png" type="Texture" id=3]
+[ext_resource path="res://sprites/UI/UI/BlackBigCircleBoxWithBorder_27x27.png" type="Texture" id=4]
+[ext_resource path="res://sprites/UI/UI/RectangleBox_96x96.png" type="Texture" id=5]
+[ext_resource path="res://fonts/Anton/Anton-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://prefabs/tropas/scripts/Carta.gd" type="Script" id=7]
+[ext_resource path="res://sons/UI/JDSherbert - Ultimate UI SFX Pack/Mono/mp3/JDSherbert - Ultimate UI SFX Pack - Error - 1.mp3" type="AudioStream" id=8]
+[ext_resource path="res://sons/Free/Mono/mp3/cancelarCarta.mp3" type="AudioStream" id=9]
+[ext_resource path="res://sons/Free/Mono/mp3/selecionado.mp3" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Carta" type="Node2D"]
+scale = Vector2( 0.75, 0.75 )
+script = ExtResource( 7 )
+
+[node name="RectangleBox96X96" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="TopPatternBg116X67" type="Sprite" parent="RectangleBox96X96"]
+position = Vector2( 47, 21 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 3 )
+
+[node name="TopPatternPanel0233X15" type="Sprite" parent="RectangleBox96X96"]
+position = Vector2( 47, 82 )
+scale = Vector2( 0.85, 0.85 )
+texture = ExtResource( 2 )
+
+[node name="BlackBigCircleBoxWithBorder27X27" type="Sprite" parent="."]
+position = Vector2( 91, 5 )
+texture = ExtResource( 4 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 47, 42 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 79.0
+margin_top = -11.0
+margin_right = 89.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+
+[node name="Energia2" type="Sprite" parent="."]
+position = Vector2( 98, 7 )
+rotation = 3.14159
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia1" type="Sprite" parent="."]
+position = Vector2( 97, 4 )
+rotation = 1.83259
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 96.0
+margin_bottom = 96.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 47, 42 )
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Cancelar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -20.0
+
+[node name="Selecionado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -30.0
+
+[connection signal="mouse_entered" from="ColorRect" to="." method="_on_ColorRect_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect" to="." method="_on_ColorRect_mouse_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

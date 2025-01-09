@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cancelarCarta.mp3-71f9c15d6765ea099a8e64d1b65dec26.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Mono/mp3/cancelarCarta.mp3"
+dest_files=[ "res://.import/cancelarCarta.mp3-71f9c15d6765ea099a8e64d1b65dec26.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Select 2 (Square).ogg-101a78a7e8b2136c5b69ec234189726a.oggstr"
+
+[deps]
+
+source_file="res://sons/Free/Mono/ogg/JDSherbert - Pixel UI SFX Pack - Select 2 (Square).ogg"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Select 2 (Square).ogg-101a78a7e8b2136c5b69ec234189726a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

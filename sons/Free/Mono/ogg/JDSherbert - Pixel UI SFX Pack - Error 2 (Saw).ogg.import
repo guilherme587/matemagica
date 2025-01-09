@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Saw).ogg-fc65cc8ad530750d92f16057d1f982ad.oggstr"
+
+[deps]
+
+source_file="res://sons/Free/Mono/ogg/JDSherbert - Pixel UI SFX Pack - Error 2 (Saw).ogg"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Saw).ogg-fc65cc8ad530750d92f16057d1f982ad.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

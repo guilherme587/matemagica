@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Saw).mp3-ea41ea065f1456d2bb14bc8be23c3543.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Error 2 (Saw).mp3"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Saw).mp3-ea41ea065f1456d2bb14bc8be23c3543.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

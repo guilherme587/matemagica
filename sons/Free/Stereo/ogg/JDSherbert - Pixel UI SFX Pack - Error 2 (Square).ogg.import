@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Square).ogg-52ea23d9dd7ba8713fcffa8b910f134b.oggstr"
+
+[deps]
+
+source_file="res://sons/Free/Stereo/ogg/JDSherbert - Pixel UI SFX Pack - Error 2 (Square).ogg"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Square).ogg-52ea23d9dd7ba8713fcffa8b910f134b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

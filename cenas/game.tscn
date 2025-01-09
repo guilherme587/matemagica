@@ -1,0 +1,1384 @@
+[gd_scene load_steps=80 format=2]
+
+[ext_resource path="res://prefabs/scripts/GeradorFuncaoPrimeiroGrau.gd" type="Script" id=1]
+[ext_resource path="res://prefabs/torres/Torre_nivel_6.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefabs/torres/ArqueiroNivel_3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/torres/TorreNivel_4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/torres/ArqueiroNivel_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/tile_set/1 Tiles/FieldsTileset.png" type="Texture" id=6]
+[ext_resource path="res://sprites/tile_set/2 Objects/8 Camp/1.png" type="Texture" id=7]
+[ext_resource path="res://sons/soundTrack/finalgame.ogg" type="AudioStream" id=8]
+[ext_resource path="res://sprites/tile_set/2 Objects/8 Camp/3.png" type="Texture" id=9]
+[ext_resource path="res://sons/soundTrack/game.ogg" type="AudioStream" id=10]
+[ext_resource path="res://sprites/tile_set/2 Objects/7 Decor/Lamp1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/tile_set/3 Animated Objects/2 Campfire/1.png" type="Texture" id=12]
+[ext_resource path="res://sprites/tile_set/3 Animated Objects/1 Flag/2.png" type="Texture" id=13]
+[ext_resource path="res://sprites/tile_set/2 Objects/7 Decor/Box3.png" type="Texture" id=14]
+[ext_resource path="res://sprites/tile_set/2 Objects/8 Camp/2.png" type="Texture" id=15]
+[ext_resource path="res://sprites/tile_set/2 Objects/9 Bush/3.png" type="Texture" id=16]
+[ext_resource path="res://sprites/tile_set/2 Objects/9 Bush/2.png" type="Texture" id=17]
+[ext_resource path="res://sprites/tile_set/2 Objects/7 Decor/Log3.png" type="Texture" id=18]
+[ext_resource path="res://sprites/tile_set/2 Objects/7 Decor/Log2.png" type="Texture" id=19]
+[ext_resource path="res://sprites/tile_set/2 Objects/7 Decor/Tree1.png" type="Texture" id=20]
+[ext_resource path="res://sprites/tile_set/2 Objects/9 Bush/4.png" type="Texture" id=21]
+[ext_resource path="res://sprites/tile_set/2 Objects/7 Decor/Box4.png" type="Texture" id=22]
+[ext_resource path="res://sprites/tile_set/2 Objects/9 Bush/5.png" type="Texture" id=23]
+[ext_resource path="res://sprites/tile_set/2 Objects/9 Bush/1.png" type="Texture" id=24]
+[ext_resource path="res://sprites/tile_set/2 Objects/9 Bush/6.png" type="Texture" id=25]
+[ext_resource path="res://sprites/tile_set/2 Objects/8 Camp/4.png" type="Texture" id=26]
+[ext_resource path="res://materias/grama.gdshader" type="Shader" id=27]
+[ext_resource path="res://cenas/scripts/IAInimiga.gd" type="Script" id=28]
+[ext_resource path="res://sprites/ceu/Clouds/Clouds 5/5.png" type="Texture" id=29]
+[ext_resource path="res://sprites/ceu/Clouds/Clouds 5/2.png" type="Texture" id=30]
+[ext_resource path="res://sprites/ceu/Clouds/Clouds 5/3.png" type="Texture" id=31]
+[ext_resource path="res://sprites/ceu/Clouds/Clouds 5/4.png" type="Texture" id=32]
+[ext_resource path="res://materias/roalr_imagem.tres" type="Shader" id=33]
+[ext_resource path="res://sprites/ceu/Clouds/Clouds 5/1.png" type="Texture" id=34]
+[ext_resource path="res://sprites/UI/UI/TopPatternPanel_01_33x15.png" type="Texture" id=35]
+[ext_resource path="res://sprites/UI/UI/RectangleBox_96x96.png" type="Texture" id=36]
+[ext_resource path="res://sprites/UI/UI/ItemBox_24x24.png" type="Texture" id=37]
+[ext_resource path="res://sprites/pointers/All.png" type="Texture" id=38]
+[ext_resource path="res://fonts/Anton/Anton-Regular.ttf" type="DynamicFontData" id=39]
+[ext_resource path="res://sprites/UI/UI/CharacterBox_56x57.png" type="Texture" id=40]
+[ext_resource path="res://cenas/scripts/lblTempo.gd" type="Script" id=41]
+[ext_resource path="res://cenas/scripts/UI.gd" type="Script" id=42]
+[ext_resource path="res://cenas/Resposta.tscn" type="PackedScene" id=43]
+[ext_resource path="res://sprites/UI/UI/PatternMiddleBottomBG_199x48.png" type="Texture" id=44]
+[ext_resource path="res://sprites/UI/UI/BottomPatternPanel_119x17.png" type="Texture" id=45]
+[ext_resource path="res://sprites/UI/UI/BottomPatternBG_128x112.png" type="Texture" id=46]
+[ext_resource path="res://cenas/scripts/EfeitoPulsar.gd" type="Script" id=47]
+
+[sub_resource type="ShaderMaterial" id=19]
+shader = ExtResource( 33 )
+shader_param/direction = Vector2( 0.1, 0 )
+shader_param/speed_scale = 0.02
+
+[sub_resource type="ShaderMaterial" id=20]
+shader = ExtResource( 33 )
+shader_param/direction = Vector2( 1, 0 )
+shader_param/speed_scale = 0.02
+
+[sub_resource type="ShaderMaterial" id=21]
+shader = ExtResource( 33 )
+shader_param/direction = Vector2( 0.5, 0 )
+shader_param/speed_scale = 0.02
+
+[sub_resource type="ShaderMaterial" id=22]
+shader = ExtResource( 33 )
+shader_param/direction = Vector2( 0.3, 0 )
+shader_param/speed_scale = 0.02
+
+[sub_resource type="TileSet" id=1]
+0/name = "FieldsTileset.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 160, 160 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = ExtResource( 27 )
+shader_param/speed = 0.5
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 500.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = null
+shader_param/offset = 0.0
+
+[sub_resource type="Shader" id=31]
+code = "// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
+// original script modified by HungryProton so that the assets are moving differently : https://pastebin.com/VL3AfV8D
+//
+// speed - The speed of the wind movement.
+// minStrength - The minimal strength of the wind movement.
+// maxStrength - The maximal strength of the wind movement.
+// strengthScale - Scalefactor for the wind strength.
+// interval - The time between minimal and maximal strength changes.
+// detail - The detail (number of waves) of the wind movement.
+// distortion - The strength of geometry distortion.
+// heightOffset - The height where the wind begins to move. By default 0.0.
+
+shader_type canvas_item;
+render_mode blend_mix;
+
+// Wind settings.
+uniform float speed = 0.5;
+uniform float minStrength : hint_range(0.0, 1.0) = 0.05;
+uniform float maxStrength : hint_range(0.0, 1.0) = 0.01;
+uniform float strengthScale = 500.0;
+uniform float interval = 3.5;
+uniform float detail = 1.0;
+uniform float distortion : hint_range(0.0, 1.0);
+uniform float heightOffset : hint_range(0.0, 1.0);
+
+// With the offset value, you can if you want different moves for each asset. Just put a random value (1, 2, 3) in the editor. Don't forget to mark the material as unique if you use this
+uniform float offset = 0; 
+
+
+float getWind(vec2 vertex, vec2 uv, float time){
+    float diff = pow(maxStrength - minStrength, 2.0);
+    float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength) * strengthScale;
+    float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, (1.0-uv.y) - heightOffset);
+    
+    return wind; 
+}
+
+void vertex() {
+    vec4 pos = WORLD_MATRIX * vec4(0.0, 0.0, 0.0, 1.0);
+    float time = TIME * speed + offset;
+    //float time = TIME * speed + pos.x * pos.y  ; not working when moving...
+    VERTEX.x += getWind(VERTEX.xy, UV, time);
+}"
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = SubResource( 31 )
+shader_param/speed = 0.25
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 500.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = null
+shader_param/offset = 0.0
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 480, 40 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 480, 80 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 12 )
+region = Rect2( 32, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 12 )
+region = Rect2( 64, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 12 )
+region = Rect2( 96, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 12 )
+region = Rect2( 128, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 12 )
+region = Rect2( 160, 0, 32, 64 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 13 )
+region = Rect2( 96, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 13 )
+region = Rect2( 128, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 13 )
+region = Rect2( 160, 0, 32, 64 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 480, 200 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 220, 40 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 240, 120 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 220
+font_data = ExtResource( 39 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 220
+font_data = ExtResource( 39 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 300
+font_data = ExtResource( 39 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 300
+outline_size = 16
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 39 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 300
+font_data = ExtResource( 39 )
+
+[node name="game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+pause_mode = 1
+process_mode = 0
+one_shot = true
+
+[node name="Cronometro" type="Timer" parent="."]
+pause_mode = 1
+process_mode = 0
+one_shot = true
+
+[node name="IAInimiga" type="Node2D" parent="."]
+script = ExtResource( 28 )
+
+[node name="Timer" type="Timer" parent="IAInimiga"]
+process_mode = 0
+one_shot = true
+
+[node name="Ceu" type="Node2D" parent="."]
+z_index = -10
+
+[node name="TextureRect0" type="TextureRect" parent="Ceu"]
+margin_right = 960.0
+margin_bottom = 540.0
+texture = ExtResource( 34 )
+stretch_mode = 2
+
+[node name="TextureRect1" type="TextureRect" parent="Ceu"]
+material = SubResource( 19 )
+margin_right = 960.0
+margin_bottom = 540.0
+texture = ExtResource( 30 )
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Ceu"]
+material = SubResource( 20 )
+margin_right = 960.0
+margin_bottom = 540.0
+texture = ExtResource( 31 )
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Ceu"]
+material = SubResource( 21 )
+margin_right = 960.0
+margin_bottom = 540.0
+texture = ExtResource( 32 )
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Ceu"]
+material = SubResource( 22 )
+margin_right = 960.0
+margin_bottom = 540.0
+texture = ExtResource( 29 )
+stretch_mode = 2
+
+[node name="TileMap2" type="TileMap" parent="."]
+modulate = Color( 0.219608, 0.227451, 0.321569, 1 )
+position = Vector2( 0, -63 )
+z_index = -5
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 131074, 524296, 0, 0, 524297, 0, 131074, 524298, 0, 0, 524299, 0, 131074, 524300, 0, 0, 524301, 0, 131074, 524302, 0, 0, 524303, 0, 131074, 524304, 0, 0, 524305, 0, 131074, 524306, 0, 0, 524307, 0, 131074, 524308, 0, 0, 524309, 0, 131074, 524310, 0, 0, 524311, 0, 131074, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 131074, 655364, 0, 0, 655365, 0, 131074, 655366, 0, 0, 655367, 0, 131074, 655368, 0, 0, 655369, 0, 131074, 655370, 0, 0, 655371, 0, 131074, 655372, 0, 0, 655373, 0, 131074, 655374, 0, 0, 655375, 0, 131074, 655376, 0, 0, 655377, 0, 131074, 655378, 0, 0, 655379, 0, 131074, 655380, 0, 0, 655381, 0, 131074, 655382, 0, 0, 655383, 0, 131074, 655384, 0, 0, 655385, 0, 131074, 655386, 0, 131074, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 131074, 720901, 0, 0, 720902, 0, 131074, 720903, 0, 0, 720904, 0, 131074, 720905, 0, 0, 720906, 0, 131074, 720907, 0, 0, 720908, 0, 131074, 720909, 0, 0, 720910, 0, 131074, 720911, 0, 0, 720912, 0, 131074, 720913, 0, 0, 720914, 0, 131074, 720915, 0, 0, 720916, 0, 131074, 720917, 0, 0, 720918, 0, 131074, 720919, 0, 0, 720920, 0, 131074, 720921, 0, 131074, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 131074, 851973, 0, 0, 851974, 0, 131074, 851975, 0, 0, 851976, 0, 131074, 851977, 0, 0, 851978, 0, 131074, 851979, 0, 0, 851980, 0, 131074, 851981, 0, 0, 851982, 0, 131074, 851983, 0, 0, 851984, 0, 131074, 851985, 0, 0, 851986, 0, 131074, 851987, 0, 0, 851988, 0, 131074, 851989, 0, 0, 851990, 0, 131074, 851991, 0, 0, 851992, 0, 131074, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983062, 0, 0, 983063, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 983067, 0, 0, 983068, 0, 0, 983069, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, -63 )
+z_index = -5
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 131074, 524296, 0, 0, 524297, 0, 131074, 524298, 0, 0, 524299, 0, 131074, 524300, 0, 0, 524301, 0, 131074, 524302, 0, 0, 524303, 0, 131074, 524304, 0, 0, 524305, 0, 131074, 524306, 0, 0, 524307, 0, 131074, 524308, 0, 0, 524309, 0, 131074, 524310, 0, 0, 524311, 0, 131074, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 131074, 655364, 0, 0, 655365, 0, 131074, 655366, 0, 0, 655367, 0, 131074, 655368, 0, 0, 655369, 0, 131074, 655370, 0, 0, 655371, 0, 131074, 655372, 0, 0, 655373, 0, 131074, 655374, 0, 0, 655375, 0, 131074, 655376, 0, 0, 655377, 0, 131074, 655378, 0, 0, 655379, 0, 131074, 655380, 0, 0, 655381, 0, 131074, 655382, 0, 0, 655383, 0, 131074, 655384, 0, 0, 655385, 0, 131074, 655386, 0, 131074, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 131074, 720901, 0, 0, 720902, 0, 131074, 720903, 0, 0, 720904, 0, 131074, 720905, 0, 0, 720906, 0, 131074, 720907, 0, 0, 720908, 0, 131074, 720909, 0, 0, 720910, 0, 131074, 720911, 0, 0, 720912, 0, 131074, 720913, 0, 0, 720914, 0, 131074, 720915, 0, 0, 720916, 0, 131074, 720917, 0, 0, 720918, 0, 131074, 720919, 0, 0, 720920, 0, 131074, 720921, 0, 131074, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 131074, 851973, 0, 0, 851974, 0, 131074, 851975, 0, 0, 851976, 0, 131074, 851977, 0, 0, 851978, 0, 131074, 851979, 0, 0, 851980, 0, 131074, 851981, 0, 0, 851982, 0, 131074, 851983, 0, 0, 851984, 0, 131074, 851985, 0, 0, 851986, 0, 131074, 851987, 0, 0, 851988, 0, 131074, 851989, 0, 0, 851990, 0, 131074, 851991, 0, 0, 851992, 0, 131074, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983062, 0, 0, 983063, 0, 0, 983064, 0, 0, 983065, 0, 0, 983066, 0, 0, 983067, 0, 0, 983068, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0 )
+
+[node name="CenarioBack" type="Node2D" parent="."]
+position = Vector2( 0, -63 )
+
+[node name="Tree1" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( 218, 227 )
+texture = ExtResource( 20 )
+
+[node name="Tree2" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( 68, 247 )
+texture = ExtResource( 20 )
+
+[node name="Tree4" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( -1, 272 )
+texture = ExtResource( 20 )
+
+[node name="Tree3" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( -14, 335 )
+texture = ExtResource( 20 )
+
+[node name="Tree5" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( 822, 238 )
+texture = ExtResource( 20 )
+
+[node name="Tree6" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( 719, 221 )
+texture = ExtResource( 20 )
+
+[node name="Tree7" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( 936, 281 )
+texture = ExtResource( 20 )
+
+[node name="Tree8" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( 867, 288 )
+texture = ExtResource( 20 )
+
+[node name="Tree9" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( 607, 214 )
+texture = ExtResource( 20 )
+
+[node name="Tree10" type="Sprite" parent="CenarioBack"]
+material = SubResource( 16 )
+position = Vector2( 340, 225 )
+texture = ExtResource( 20 )
+
+[node name="6" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 144, 265 )
+texture = ExtResource( 25 )
+
+[node name="7" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 564, 234 )
+texture = ExtResource( 25 )
+
+[node name="1" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 294, 236 )
+texture = ExtResource( 24 )
+
+[node name="3" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 117, 222 )
+texture = ExtResource( 16 )
+
+[node name="4" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 37, 311 )
+texture = ExtResource( 16 )
+
+[node name="5" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 937, 353 )
+texture = ExtResource( 21 )
+
+[node name="8" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 813, 302 )
+texture = ExtResource( 23 )
+
+[node name="9" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 884, 229 )
+texture = ExtResource( 23 )
+
+[node name="10" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 895, 243 )
+texture = ExtResource( 23 )
+
+[node name="11" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 668, 230 )
+texture = ExtResource( 23 )
+
+[node name="12" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 646, 238 )
+texture = ExtResource( 16 )
+
+[node name="2" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 675, 240 )
+texture = ExtResource( 24 )
+
+[node name="13" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 412, 237 )
+texture = ExtResource( 17 )
+
+[node name="14" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 433, 228 )
+texture = ExtResource( 24 )
+
+[node name="15" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 436, 244 )
+texture = ExtResource( 17 )
+
+[node name="16" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 458, 231 )
+texture = ExtResource( 21 )
+
+[node name="17" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 465, 246 )
+texture = ExtResource( 23 )
+
+[node name="18" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 506, 232 )
+texture = ExtResource( 25 )
+
+[node name="19" type="Sprite" parent="CenarioBack"]
+material = SubResource( 18 )
+position = Vector2( 529, 236 )
+texture = ExtResource( 24 )
+
+[node name="TorresAiadas" type="Node2D" parent="."]
+position = Vector2( 0, -63 )
+scale = Vector2( -1, 1 )
+
+[node name="TorreNivel_5" parent="TorresAiadas" instance=ExtResource( 4 )]
+position = Vector2( -180, 230 )
+blnCenario = false
+
+[node name="ArqueiroNivel_1" parent="TorresAiadas/TorreNivel_5" instance=ExtResource( 5 )]
+position = Vector2( 1, -2 )
+
+[node name="TorreMeio" parent="TorresAiadas" instance=ExtResource( 2 )]
+position = Vector2( -75, 300 )
+blnCenario = false
+
+[node name="ArqueiroNivel_3" parent="TorresAiadas/TorreMeio" instance=ExtResource( 3 )]
+position = Vector2( 2, -4 )
+
+[node name="TorreNivel_6" parent="TorresAiadas" instance=ExtResource( 4 )]
+position = Vector2( -115, 400 )
+blnCenario = false
+
+[node name="ArqueiroNivel_1" parent="TorresAiadas/TorreNivel_6" instance=ExtResource( 5 )]
+position = Vector2( 1, -2 )
+
+[node name="TorresInimigas" type="Node2D" parent="."]
+position = Vector2( 960, -63 )
+
+[node name="TorreNivel_5" parent="TorresInimigas" instance=ExtResource( 4 )]
+position = Vector2( -180, 230 )
+blnInimigo = true
+blnCenario = false
+
+[node name="ArqueiroNivel_1" parent="TorresInimigas/TorreNivel_5" instance=ExtResource( 5 )]
+position = Vector2( 1, -2 )
+blnInimigo = true
+
+[node name="TorreMeio" parent="TorresInimigas" groups=["Inimigo"] instance=ExtResource( 2 )]
+position = Vector2( -75, 300 )
+blnInimigo = true
+blnCenario = false
+
+[node name="ArqueiroNivel_3" parent="TorresInimigas/TorreMeio" instance=ExtResource( 3 )]
+position = Vector2( 0, -4 )
+blnInimigo = true
+
+[node name="TorreNivel_4" parent="TorresInimigas" instance=ExtResource( 4 )]
+position = Vector2( -115, 400 )
+blnInimigo = true
+blnCenario = false
+
+[node name="ArqueiroNivel_1" parent="TorresInimigas/TorreNivel_4" instance=ExtResource( 5 )]
+position = Vector2( 1, -2 )
+blnInimigo = true
+
+[node name="TropasAliadas" type="Node2D" parent="."]
+position = Vector2( 960, -63 )
+scale = Vector2( -1, 1 )
+
+[node name="Linha3" type="Node2D" parent="TropasAliadas"]
+
+[node name="Area2D" type="Area2D" parent="TropasAliadas/Linha3"]
+visible = false
+position = Vector2( 480, 264 )
+collision_layer = 512
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TropasAliadas/Linha3/Area2D"]
+shape = SubResource( 29 )
+
+[node name="Linha2" type="Node2D" parent="TropasAliadas"]
+
+[node name="Area2D" type="Area2D" parent="TropasAliadas/Linha2"]
+visible = false
+position = Vector2( 480, 345 )
+collision_layer = 256
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TropasAliadas/Linha2/Area2D"]
+shape = SubResource( 29 )
+
+[node name="Linha1" type="Node2D" parent="TropasAliadas"]
+
+[node name="Area2D" type="Area2D" parent="TropasAliadas/Linha1"]
+visible = false
+position = Vector2( 480, 466 )
+collision_layer = 128
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TropasAliadas/Linha1/Area2D"]
+shape = SubResource( 30 )
+
+[node name="TropasInimigas" type="Node2D" parent="."]
+position = Vector2( 0, -63 )
+
+[node name="Linha3" type="Node2D" parent="TropasInimigas"]
+
+[node name="Area2D" type="Area2D" parent="TropasInimigas/Linha3"]
+visible = false
+position = Vector2( 480, 264 )
+collision_layer = 4096
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TropasInimigas/Linha3/Area2D"]
+shape = SubResource( 29 )
+
+[node name="Linha2" type="Node2D" parent="TropasInimigas"]
+
+[node name="Area2D" type="Area2D" parent="TropasInimigas/Linha2"]
+visible = false
+position = Vector2( 480, 345 )
+collision_layer = 2048
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TropasInimigas/Linha2/Area2D"]
+shape = SubResource( 29 )
+
+[node name="Linha1" type="Node2D" parent="TropasInimigas"]
+
+[node name="Area2D" type="Area2D" parent="TropasInimigas/Linha1"]
+visible = false
+position = Vector2( 480, 466 )
+collision_layer = 1024
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TropasInimigas/Linha1/Area2D"]
+shape = SubResource( 30 )
+
+[node name="CenarioFront" type="Node2D" parent="."]
+position = Vector2( 0, -63 )
+
+[node name="FogueiraApagada" type="AnimatedSprite" parent="CenarioFront"]
+position = Vector2( 80, 464 )
+frames = SubResource( 8 )
+playing = true
+
+[node name="FogueiraApagada2" type="AnimatedSprite" parent="CenarioFront"]
+position = Vector2( 901, 392 )
+frames = SubResource( 8 )
+playing = true
+
+[node name="Bandeira" type="AnimatedSprite" parent="CenarioFront"]
+position = Vector2( 808, 469 )
+frames = SubResource( 15 )
+playing = true
+
+[node name="Bandeira2" type="AnimatedSprite" parent="CenarioFront"]
+position = Vector2( 859, 351 )
+frames = SubResource( 15 )
+playing = true
+
+[node name="Bandeira3" type="AnimatedSprite" parent="CenarioFront"]
+position = Vector2( 747, 275 )
+frames = SubResource( 15 )
+playing = true
+
+[node name="Bandeira4" type="AnimatedSprite" parent="CenarioFront"]
+position = Vector2( 209, 276 )
+frames = SubResource( 15 )
+playing = true
+flip_h = true
+
+[node name="Bandeira5" type="AnimatedSprite" parent="CenarioFront"]
+position = Vector2( 106, 346 )
+frames = SubResource( 15 )
+playing = true
+flip_h = true
+
+[node name="Bandeira6" type="AnimatedSprite" parent="CenarioFront"]
+position = Vector2( 145, 454 )
+frames = SubResource( 15 )
+playing = true
+flip_h = true
+
+[node name="1" type="Sprite" parent="CenarioFront"]
+position = Vector2( 65, 453 )
+texture = ExtResource( 7 )
+
+[node name="3" type="Sprite" parent="CenarioFront"]
+position = Vector2( 25, 410 )
+texture = ExtResource( 9 )
+
+[node name="2" type="Sprite" parent="CenarioFront"]
+position = Vector2( 183, 505 )
+texture = ExtResource( 15 )
+
+[node name="4" type="Sprite" parent="CenarioFront"]
+position = Vector2( 872, 481 )
+texture = ExtResource( 15 )
+
+[node name="5" type="Sprite" parent="CenarioFront"]
+position = Vector2( 923, 382 )
+texture = ExtResource( 26 )
+
+[node name="6" type="Sprite" parent="CenarioFront"]
+position = Vector2( 774, 497 )
+texture = ExtResource( 7 )
+
+[node name="Lamp1" type="Sprite" parent="CenarioFront"]
+position = Vector2( 246, 445 )
+texture = ExtResource( 11 )
+
+[node name="Lamp2" type="Sprite" parent="CenarioFront"]
+position = Vector2( 345, 282 )
+texture = ExtResource( 11 )
+
+[node name="Lamp3" type="Sprite" parent="CenarioFront"]
+position = Vector2( 169, 371 )
+texture = ExtResource( 11 )
+
+[node name="Log3" type="Sprite" parent="CenarioFront"]
+position = Vector2( 88, 505 )
+texture = ExtResource( 18 )
+
+[node name="Log4" type="Sprite" parent="CenarioFront"]
+position = Vector2( 911, 433 )
+texture = ExtResource( 18 )
+
+[node name="Log2" type="Sprite" parent="CenarioFront"]
+position = Vector2( 922, 409 )
+texture = ExtResource( 19 )
+
+[node name="Log5" type="Sprite" parent="CenarioFront"]
+position = Vector2( 108, 483 )
+texture = ExtResource( 19 )
+
+[node name="Tree1" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 233, 498 )
+texture = ExtResource( 20 )
+
+[node name="Tree2" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 69, 396 )
+texture = ExtResource( 20 )
+
+[node name="Tree3" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 696, 501 )
+texture = ExtResource( 20 )
+
+[node name="Tree4" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 320, 506 )
+texture = ExtResource( 20 )
+
+[node name="Tree5" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 393, 497 )
+texture = ExtResource( 20 )
+
+[node name="Tree6" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 473, 506 )
+texture = ExtResource( 20 )
+
+[node name="Tree7" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 527, 498 )
+texture = ExtResource( 20 )
+
+[node name="Tree8" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 601, 505 )
+texture = ExtResource( 20 )
+
+[node name="Tree9" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 659, 504 )
+texture = ExtResource( 20 )
+
+[node name="Tree10" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 839, 504 )
+texture = ExtResource( 20 )
+
+[node name="Tree11" type="Sprite" parent="CenarioFront"]
+material = SubResource( 16 )
+position = Vector2( 945, 444 )
+texture = ExtResource( 20 )
+
+[node name="Box3" type="Sprite" parent="CenarioFront"]
+position = Vector2( 16, 464 )
+texture = ExtResource( 14 )
+
+[node name="Box4" type="Sprite" parent="CenarioFront"]
+position = Vector2( 26, 468 )
+texture = ExtResource( 22 )
+
+[node name="Box5" type="Sprite" parent="CenarioFront"]
+position = Vector2( 754, 517 )
+texture = ExtResource( 22 )
+
+[node name="Box6" type="Sprite" parent="CenarioFront"]
+position = Vector2( 879, 402 )
+texture = ExtResource( 22 )
+
+[node name="Box7" type="Sprite" parent="CenarioFront"]
+position = Vector2( 772, 520 )
+texture = ExtResource( 14 )
+
+[node name="Area2DCampoDeBatalhaFeiticos" type="Area2D" parent="."]
+visible = false
+position = Vector2( 0, 20 )
+collision_layer = 64
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DCampoDeBatalhaFeiticos"]
+position = Vector2( 481, 182 )
+shape = SubResource( 26 )
+
+[node name="Area2DCampoDeBatalhaFeiticos2" type="Area2D" parent="."]
+visible = false
+position = Vector2( 813, 440 )
+rotation = 1.57079
+collision_layer = 64
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DCampoDeBatalhaFeiticos2"]
+position = Vector2( 1.99985, 73 )
+rotation = -1.57079
+shape = SubResource( 27 )
+
+[node name="Area2DCampoDeBatalhaTropas" type="Area2D" parent="."]
+visible = false
+position = Vector2( 241, 282 )
+collision_layer = 32
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DCampoDeBatalhaTropas"]
+shape = SubResource( 28 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 42 )
+
+[node name="Cartas" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ItemBox24X24" type="Sprite" parent="UI/Cartas"]
+position = Vector2( 252, 480 )
+scale = Vector2( 21, 5 )
+texture = ExtResource( 37 )
+
+[node name="Carta1" type="Sprite" parent="UI/Cartas"]
+position = Vector2( 50, 485 )
+texture = ExtResource( 36 )
+
+[node name="TopPatternPanel0133X15" type="Sprite" parent="UI/Cartas/Carta1"]
+position = Vector2( -1, -30 )
+texture = ExtResource( 35 )
+
+[node name="TopPatternPanel0133X16" type="Sprite" parent="UI/Cartas/Carta1"]
+position = Vector2( 0, 29 )
+texture = ExtResource( 35 )
+flip_v = true
+
+[node name="Position2D" type="Position2D" parent="UI/Cartas/Carta1"]
+
+[node name="Carta2" type="Sprite" parent="UI/Cartas"]
+position = Vector2( 146, 485 )
+texture = ExtResource( 36 )
+
+[node name="TopPatternPanel0133X15" type="Sprite" parent="UI/Cartas/Carta2"]
+position = Vector2( -1, -30 )
+texture = ExtResource( 35 )
+
+[node name="TopPatternPanel0133X16" type="Sprite" parent="UI/Cartas/Carta2"]
+position = Vector2( 0, 29 )
+texture = ExtResource( 35 )
+flip_v = true
+
+[node name="Position2D" type="Position2D" parent="UI/Cartas/Carta2"]
+
+[node name="Carta3" type="Sprite" parent="UI/Cartas"]
+position = Vector2( 242, 485 )
+texture = ExtResource( 36 )
+
+[node name="TopPatternPanel0133X15" type="Sprite" parent="UI/Cartas/Carta3"]
+position = Vector2( -1, -30 )
+texture = ExtResource( 35 )
+
+[node name="TopPatternPanel0133X16" type="Sprite" parent="UI/Cartas/Carta3"]
+position = Vector2( 0, 29 )
+texture = ExtResource( 35 )
+flip_v = true
+
+[node name="Position2D" type="Position2D" parent="UI/Cartas/Carta3"]
+
+[node name="Carta4" type="Sprite" parent="UI/Cartas"]
+position = Vector2( 338, 485 )
+texture = ExtResource( 36 )
+
+[node name="TopPatternPanel0133X15" type="Sprite" parent="UI/Cartas/Carta4"]
+position = Vector2( -1, -30 )
+texture = ExtResource( 35 )
+
+[node name="TopPatternPanel0133X16" type="Sprite" parent="UI/Cartas/Carta4"]
+position = Vector2( 0, 29 )
+texture = ExtResource( 35 )
+flip_v = true
+
+[node name="Position2D" type="Position2D" parent="UI/Cartas/Carta4"]
+
+[node name="Carta5" type="Sprite" parent="UI/Cartas"]
+position = Vector2( 434, 485 )
+texture = ExtResource( 36 )
+
+[node name="TopPatternPanel0133X15" type="Sprite" parent="UI/Cartas/Carta5"]
+position = Vector2( -1, -30 )
+texture = ExtResource( 35 )
+
+[node name="TopPatternPanel0133X16" type="Sprite" parent="UI/Cartas/Carta5"]
+position = Vector2( 0, 29 )
+texture = ExtResource( 35 )
+flip_v = true
+
+[node name="Position2D" type="Position2D" parent="UI/Cartas/Carta5"]
+
+[node name="BarraDeEnergia" type="Node2D" parent="UI/Cartas"]
+
+[node name="Energia1" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 25, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia2" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 75, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia3" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 125, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia4" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 175, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia5" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 225, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia6" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 275, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia7" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 325, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia8" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 375, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia9" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 425, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Energia10" type="Sprite" parent="UI/Cartas/BarraDeEnergia"]
+position = Vector2( 475, 417 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 38 )
+region_enabled = true
+region_rect = Rect2( 223.839, 79.4193, 16.1303, 14.8601 )
+
+[node name="Position2D" type="Position2D" parent="UI/Cartas"]
+position = Vector2( 503, 517 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Questoes" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ItemBox24X24" type="Sprite" parent="UI/Questoes"]
+position = Vector2( 829, 474 )
+scale = Vector2( 12, 6 )
+texture = ExtResource( 37 )
+
+[node name="TopPatternPanel0133X15" type="Sprite" parent="UI/Questoes/ItemBox24X24"]
+position = Vector2( 0.499985, -8.99998 )
+scale = Vector2( 0.305, 0.225 )
+texture = ExtResource( 35 )
+
+[node name="TopPatternPanel0133X16" type="Sprite" parent="UI/Questoes/ItemBox24X24"]
+position = Vector2( -0.416702, 8.99991 )
+scale = Vector2( 0.305, 0.225 )
+texture = ExtResource( 35 )
+flip_v = true
+
+[node name="Tempo" type="Label" parent="UI/Questoes/ItemBox24X24"]
+margin_left = 7.0
+margin_top = -8.0
+margin_right = 225.0
+margin_bottom = 324.0
+rect_scale = Vector2( 0.007, 0.007 )
+custom_fonts/font = SubResource( 24 )
+text = "00"
+align = 1
+
+[node name="Questao" type="Label" parent="UI/Questoes/ItemBox24X24"]
+margin_left = -10.0
+margin_top = -2.0
+margin_right = 1298.0
+margin_bottom = 330.0
+rect_scale = Vector2( 0.015, 0.015 )
+custom_fonts/font = SubResource( 25 )
+text = "000000000000"
+align = 1
+
+[node name="Resposta1" parent="UI/Questoes" instance=ExtResource( 43 )]
+
+[node name="Resposta2" parent="UI/Questoes" instance=ExtResource( 43 )]
+position = Vector2( 684, 433 )
+
+[node name="Resposta3" parent="UI/Questoes" instance=ExtResource( 43 )]
+position = Vector2( 684, 464 )
+
+[node name="Resposta4" parent="UI/Questoes" instance=ExtResource( 43 )]
+position = Vector2( 684, 495 )
+
+[node name="Resposta5" parent="UI/Questoes" instance=ExtResource( 43 )]
+position = Vector2( 684, 526 )
+
+[node name="UI" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="btnPausa" type="Sprite" parent="UI/UI"]
+position = Vector2( 913, 30 )
+scale = Vector2( 1.35714, 0.780702 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="UI/UI/btnPausa"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.37, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "||"
+
+[node name="btnPausa" type="ColorRect" parent="UI/UI/btnPausa"]
+margin_left = -28.0
+margin_top = -29.0
+margin_right = 28.0
+margin_bottom = 28.0
+color = Color( 1, 1, 1, 0.215686 )
+
+[node name="lblTempo" type="Sprite" parent="UI/UI"]
+position = Vector2( 482, 30 )
+scale = Vector2( 2.2, 0.8 )
+texture = ExtResource( 40 )
+script = ExtResource( 41 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblTempo" type="Label" parent="UI/UI/lblTempo"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.071, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "05:00"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="UI/UI/lblTempo"]
+pause_mode = 1
+process_mode = 0
+
+[node name="lblPlacar" type="Sprite" parent="UI/UI"]
+position = Vector2( 764, 30 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblPlacar" type="Label" parent="UI/UI/lblPlacar"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.088, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "0 - 0"
+align = 1
+valign = 1
+
+[node name="FimDeJogo" type="Control" parent="UI"]
+pause_mode = 2
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/FimDeJogo"]
+margin_right = 960.0
+margin_bottom = 540.0
+color = Color( 0.235294, 0.286275, 0.372549, 0.490196 )
+
+[node name="back" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 486, 340 )
+scale = Vector2( 11.25, 4 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BottomPatternPanel119X17" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 816, 320 )
+rotation = 1.57079
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 45 )
+
+[node name="BottomPatternPanel119X18" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 157.5, 320 )
+rotation = 1.57079
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 45 )
+flip_v = true
+
+[node name="BottomPatternBg128X112" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 489, 314 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 46 )
+flip_v = true
+
+[node name="PatternMiddleBottomBg199X48" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 486, 490.5 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 44 )
+flip_v = true
+
+[node name="Derrota" type="Label" parent="UI/FimDeJogo"]
+visible = false
+modulate = Color( 1, 0.435294, 0.435294, 1 )
+margin_left = -46.0
+margin_top = -5.0
+margin_right = 1706.0
+margin_bottom = 447.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = SubResource( 33 )
+text = "DERROTA"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Vitoria" type="Label" parent="UI/FimDeJogo"]
+modulate = Color( 0.729412, 1, 0.403922, 1 )
+margin_left = -46.0
+margin_right = 1706.0
+margin_bottom = 452.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = SubResource( 33 )
+text = "VITÓRIA"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblFimDeJogo" type="Label" parent="UI/FimDeJogo"]
+margin_left = 296.0
+margin_top = -5.0
+margin_right = 2048.0
+margin_bottom = 447.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 33 )
+text = "FIM DE JOGO"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblQuestoes" type="Label" parent="UI/FimDeJogo"]
+margin_left = 441.0
+margin_top = 236.0
+margin_right = 2193.0
+margin_bottom = 688.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 33 )
+text = "questões"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblPlacar" type="Label" parent="UI/FimDeJogo"]
+margin_left = 441.0
+margin_top = 296.0
+margin_right = 2193.0
+margin_bottom = 748.0
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = SubResource( 33 )
+text = "placar"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblScore2" type="Label" parent="UI/FimDeJogo"]
+margin_left = 584.0
+margin_top = 350.0
+margin_right = 2336.0
+margin_bottom = 802.0
+rect_scale = Vector2( 0.045, 0.045 )
+custom_fonts/font = SubResource( 33 )
+text = "score"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lblPlacarQuestoes" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 485, 276.25 )
+scale = Vector2( 1.5, 0.75 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblPlacarQuestoes" type="Label" parent="UI/FimDeJogo/lblPlacarQuestoes"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.088, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "0 - 0"
+align = 1
+valign = 1
+
+[node name="lblPlacarJogo" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 489, 364.25 )
+scale = Vector2( 3.5, 1.75 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblPlacarJogo" type="Label" parent="UI/FimDeJogo/lblPlacarJogo"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.088, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "0 - 0"
+align = 1
+valign = 1
+
+[node name="lblScore" type="Sprite" parent="UI/FimDeJogo"]
+position = Vector2( 624, 377.25 )
+scale = Vector2( 0.7, 0.35 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="lblScore" type="Label" parent="UI/FimDeJogo/lblScore"]
+margin_left = -23.5791
+margin_top = -22.7358
+margin_right = 106.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.08, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "0000"
+align = 1
+valign = 1
+
+[node name="lblFraseEfeito" type="Node2D" parent="UI/FimDeJogo/lblScore"]
+scale = Vector2( 1, 1 )
+script = ExtResource( 47 )
+
+[node name="lblFraseEfeito" type="Label" parent="UI/FimDeJogo/lblScore/lblFraseEfeito"]
+margin_left = -7.31866
+margin_top = 22.375
+margin_right = 651.681
+margin_bottom = 474.375
+rect_rotation = -30.0
+rect_scale = Vector2( 0.08, 0.1 )
+custom_fonts/font = SubResource( 32 )
+text = "legal!"
+align = 1
+valign = 1
+
+[node name="Node2D" type="Node2D" parent="UI/FimDeJogo"]
+position = Vector2( 655, 425 )
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_group_": true
+}
+amplitude = 0.1
+frequency = 0.5
+
+[node name="btnReiniciar" type="Sprite" parent="UI/FimDeJogo/Node2D"]
+scale = Vector2( 1.8, 0.5 )
+texture = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="UI/FimDeJogo/Node2D/btnReiniciar"]
+modulate = Color( 0.509804, 1, 0.356863, 1 )
+margin_left = -23.5791
+margin_top = -22.7364
+margin_right = 641.421
+margin_bottom = 429.264
+rect_scale = Vector2( 0.03, 0.1 )
+custom_fonts/font = SubResource( 34 )
+text = "Nova Partida"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="btnReiniciar" type="ColorRect" parent="UI/FimDeJogo/Node2D/btnReiniciar"]
+margin_left = -28.0
+margin_top = -29.0
+margin_right = 28.0
+margin_bottom = 28.0
+color = Color( 1, 1, 1, 0.215686 )
+
+[node name="Game" type="AudioStreamPlayer" parent="UI/FimDeJogo"]
+pause_mode = 2
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="FinalGame" type="AudioStreamPlayer" parent="UI/FimDeJogo"]
+pause_mode = 2
+stream = ExtResource( 8 )
+
+[node name="Game" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="FinalGame" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
+stream = ExtResource( 8 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Cronometro" to="." method="_on_Cronometro_timeout"]
+[connection signal="timeout" from="IAInimiga/Timer" to="IAInimiga" method="_on_Timer_timeout"]
+[connection signal="gui_input" from="UI/UI/btnPausa/btnPausa" to="UI" method="_on_btnPausa_gui_input"]
+[connection signal="timeout" from="UI/UI/lblTempo/Timer" to="UI/UI/lblTempo" method="_on_Timer_timeout"]
+[connection signal="gui_input" from="UI/FimDeJogo/Node2D/btnReiniciar/btnReiniciar" to="UI" method="_on_btnReiniciar_gui_input"]

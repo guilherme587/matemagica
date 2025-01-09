@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Square).mp3-b72b0b55f070e8cbde3e86ccff4ee8ea.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Mono/mp3/JDSherbert - Pixel UI SFX Pack - Error 2 (Square).mp3"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Error 2 (Square).mp3-b72b0b55f070e8cbde3e86ccff4ee8ea.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

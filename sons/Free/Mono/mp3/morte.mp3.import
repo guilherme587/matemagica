@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/morte.mp3-6a2032586dd1b99c574dd94ebd452cfd.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Mono/mp3/morte.mp3"
+dest_files=[ "res://.import/morte.mp3-6a2032586dd1b99c574dd94ebd452cfd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

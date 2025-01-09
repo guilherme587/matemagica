@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Sine).mp3-0862de0d279e437d8ec2a550cc15208f.mp3str"
+
+[deps]
+
+source_file="res://sons/Free/Stereo/mp3/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Sine).mp3"
+dest_files=[ "res://.import/JDSherbert - Pixel UI SFX Pack - Cursor 1 (Sine).mp3-0862de0d279e437d8ec2a550cc15208f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

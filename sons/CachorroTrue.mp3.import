@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/CachorroTrue.mp3-7bb17adad9274d01a7f3f70af3d72bf9.mp3str"
+
+[deps]
+
+source_file="res://sons/CachorroTrue.mp3"
+dest_files=[ "res://.import/CachorroTrue.mp3-7bb17adad9274d01a7f3f70af3d72bf9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

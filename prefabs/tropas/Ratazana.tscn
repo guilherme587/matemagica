@@ -1,0 +1,116 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://sprites/tropas_cavaleiro_rato_mago/1/S_Run.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/componentes/AreaDetectarLinhasTerrenoAliado.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefabs/tropas/scripts/IA.gd" type="Script" id=3]
+[ext_resource path="res://prefabs/componentes/Visao.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/componentes/Vida.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefabs/componentes/AreaDanoUnitarioTropa.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprites/tropas_cavaleiro_rato_mago/1/S_Attack.png" type="Texture" id=7]
+[ext_resource path="res://sons/Dinosaurs/Dinosaurs/Ratazana.wav" type="AudioStream" id=8]
+[ext_resource path="res://sons/Dinosaurs/Dinosaurs/AtaqueRatazana.wav" type="AudioStream" id=9]
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 7 )
+region = Rect2( 192, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 7 )
+region = Rect2( 288, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 7 )
+region = Rect2( 384, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 7 )
+region = Rect2( 480, 0, 96, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 96, 65 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 96, 65 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 96, 65 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 288, 0, 96, 65 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 384, 0, 96, 65 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 480, 0, 96, 65 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": false,
+"name": "ataque",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": false,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=8]
+
+[node name="Ratazana" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 8199
+script = ExtResource( 3 )
+intVelocidade = 7000
+intDano = 4
+areaDano = NodePath("AreaDanoUnitarioTropa")
+intScore = 15
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 15 )
+animation = "ataque"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2, 13 )
+rotation = -1.57079
+shape = SubResource( 8 )
+
+[node name="AreaDetectarLinhasTerrenoAliado" parent="." instance=ExtResource( 2 )]
+
+[node name="Visao" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 0.45, 0.45 )
+
+[node name="Vida" parent="." instance=ExtResource( 5 )]
+fltVida = 22.0
+
+[node name="AreaDanoUnitarioTropa" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1, 10 )
+scale = Vector2( 1.8, 1.8 )
+fltDanoPorSegundo = 0.65
+
+[node name="Spaw" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Morte" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Ataque" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
